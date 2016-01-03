@@ -16,30 +16,21 @@
 
 get_header(); ?>
 
+<?php
+/**
+ * @TODO
+ * Change category references to be more friendly to production and development environments.
+ * This can be done by using the category slug instead of the ID, as the ID will be different across databases.
+ */
+?>
 <div id="page" role="main">
-	<article class="main-content">
-	<?php if ( have_posts() ) : ?>
+	<div class="small-12 large-12 columns" role="main">
 
-		<?php /* Start the Loop */ ?>
-		<?php while ( have_posts() ) : the_post(); ?>
-			<?php get_template_part( 'content', get_post_format() ); ?>
-		<?php endwhile; ?>
+		<?php get_template_part('parts/layouts/mobile'); ?>
 
-		<?php else : ?>
-			<?php get_template_part( 'content', 'none' ); ?>
+		<?php get_template_part('parts/layouts/desktop-tablet'); ?>
 
-		<?php endif; // End have_posts() check. ?>
-
-		<?php /* Display navigation to next/previous pages when applicable */ ?>
-		<?php if ( function_exists( 'foundationpress_pagination' ) ) { foundationpress_pagination(); } else if ( is_paged() ) { ?>
-			<nav id="post-nav">
-				<div class="post-previous"><?php next_posts_link( __( '&larr; Older posts', 'foundationpress' ) ); ?></div>
-				<div class="post-next"><?php previous_posts_link( __( 'Newer posts &rarr;', 'foundationpress' ) ); ?></div>
-			</nav>
-		<?php } ?>
-
-	</article>
-	<?php get_sidebar(); ?>
+	</div>
 
 </div>
 
