@@ -7,6 +7,13 @@
  * @since FoundationPress 1.0.0
  */
 
+// Custom Favicon for admin and login pages
+// First, create a function that includes the path to your favicon
+function add_favicon() {
+	$favicon_url = get_stylesheet_directory_uri() . '/assets/images/icons/favicon.ico';
+	echo '<link rel="shortcut icon" href="' . $favicon_url . '" />';
+}
+
 if ( ! function_exists( 'foundationpress_theme_support' ) ) :
 function foundationpress_theme_support() {
 	// Add language support
@@ -29,6 +36,12 @@ function foundationpress_theme_support() {
 
 	// Declare WooCommerce support per http://docs.woothemes.com/document/third-party-custom-theme-compatibility/
 	add_theme_support( 'woocommerce' );
+
+	// Custom Favicon for admin and login pages
+	// Now, just make sure that function runs when you're on the login page and admin pages
+    add_action('login_head', 'add_favicon');
+    add_action('admin_head', 'add_favicon');
+
 }
 
 add_action( 'after_setup_theme', 'foundationpress_theme_support' );
