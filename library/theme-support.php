@@ -28,11 +28,20 @@ function foundationpress_theme_support() {
 	// Add post thumbnail support: http://codex.wordpress.org/Post_Thumbnails
 	add_theme_support( 'post-thumbnails' );
 
+	// 16:9 Large Thumbnail
+    add_image_size( 'size-thumbnail-large', 800, 450, true );
+
+    // 16:9 Medium Thumbnail
+    add_image_size( 'size-thumbnail-medium', 546, 307, true );
+
+    // 16:9 Small Thumbnail
+    add_image_size( 'size-thumbnail-small', 233, 131, true );
+
 	// RSS thingy
 	add_theme_support( 'automatic-feed-links' );
 
 	// Add post formarts support: http://codex.wordpress.org/Post_Formats
-	add_theme_support( 'post-formats', array('aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat') );
+	add_theme_support( 'post-formats', array('gallery', 'image', 'video') );
 
 	// Declare WooCommerce support per http://docs.woothemes.com/document/third-party-custom-theme-compatibility/
 	add_theme_support( 'woocommerce' );
