@@ -12,11 +12,11 @@
 			<?php get_template_part('parts/sections/mobile/featured'); ?>
 
 			<?php get_template_part('parts/sections/mobile/news'); ?>
-			
+
 			<?php get_template_part('parts/sections/mobile/opinion'); ?>
 
 			<?php get_template_part('parts/sections/mobile/multimedia'); ?>
-			
+
 			<?php get_template_part('parts/sections/mobile/culture'); ?>
 
 			<?php get_template_part('parts/sections/mobile/sports'); ?>

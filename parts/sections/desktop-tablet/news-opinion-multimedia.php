@@ -30,7 +30,7 @@
 		<!-- Single sentence excerpt -->
 		<p class="news-excerpt">
 			<?php get_news_excerpt(); ?>
-		</p> 
+		</p>
 
 		<!-- Two posts without thumbnails -->
 		<div class="show-for-medium-up">

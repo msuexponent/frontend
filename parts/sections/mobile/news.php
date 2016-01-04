@@ -13,7 +13,7 @@
 <!-- Single sentence excerpt -->
 <p class="news-excerpt">
 	<?php get_news_excerpt(); ?>
-</p> 
+</p>
 
 <!-- Post list -->
 <?php get_news_list_mobile(); ?>

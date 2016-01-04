@@ -1,4 +1,4 @@
-<!-- Culture & Sports --> 
+<!-- Culture & Sports -->
 
 <!-- Two latest posts with thumbnails -->
 <div class="row" data-equalizer>
@@ -20,7 +20,7 @@
 
 <!-- Four latest posts without thumbnails -->
 <div class="row" data-equalizer>
-	
+
 	<!-- Culture -->
 	<div class="medium-6 columns" data-equalizer-watch>
 		<?php get_culture_list(); ?>

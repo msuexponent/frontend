@@ -2,7 +2,7 @@
 
 <div class="row" data-equalizer>
 
-	<div class="medium-5 columns" data-equalizer-watch>	
+	<div class="medium-5 columns" data-equalizer-watch>
 
 		<!-- Latest post thumbnail -->
 		<?php get_featured_thumbnail(); ?>
@@ -21,9 +21,9 @@
 			<?php get_featured_excerpt(); ?>
 		</p>
 
-		<!-- Three posts with thumbnails --> 
+		<!-- Three posts with thumbnails -->
 		<?php get_featured_list(); ?>
-		
+
 	</div>
 
 </div>
