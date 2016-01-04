@@ -64,7 +64,7 @@ wp_reset_postdata();
 }
 
 /**
-Returns culture posts without thumbnails as a block grid
+ * Returns culture posts without thumbnails as a block grid
 **/
 function get_culture_list() {
 
