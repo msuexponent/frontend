@@ -16,13 +16,6 @@
 
 get_header(); ?>
 
-<?php
-/**
- * @TODO
- * Change category references to be more friendly to production and development environments.
- * This can be done by using the category slug instead of the ID, as the ID will be different across databases.
- */
-?>
 <div id="page" role="main">
 	<div class="small-12 large-12 columns" role="main">
 
