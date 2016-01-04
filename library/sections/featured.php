@@ -111,19 +111,19 @@ function get_featured_list() {
 $the_query = new WP_Query( $args );
 
 if ( $the_query->have_posts() ) {
-	echo '<ul class="large-block-grid-3 medium-block-grid-3">';
+	echo '<div class="row medium-up-3 large-up-3">';
 	while ( $the_query->have_posts() ) {
 		$the_query->the_post();
 		// Link
-		echo '<li><h6><a class="headline" href="' . get_permalink( get_post()->ID ) . '" title="' . esc_attr( get_post()->post_title ) . '">';
+		echo '<div class="column"><h6><a class="headline" href="' . get_permalink( get_post()->ID ) . '" title="' . esc_attr( get_post()->post_title ) . '">';
 		// Thumbnail
 		echo get_the_post_thumbnail( get_post()->ID, 'size-thumbnail-small', array( 'class'	=> "get_two_latest_featured" ) );
 		echo '<br/>';
 		// Title
 		echo get_the_title( get_post()->ID );
-		echo '</a></h6></li>';
+		echo '</a></h6></div>';
 	}
-	echo '</ul>';
+	echo '</div>';
 }
 
 else {

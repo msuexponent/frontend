@@ -125,11 +125,11 @@ $the_query = new WP_Query( $args );
 $i = 1;
 
 if ( $the_query->have_posts() ) {
-	echo '<ul class="large-block-grid-1 medium-block-grid-1">';
+	echo '<div class="row medium-up-1 large-up-1">';
 	while ( $the_query->have_posts() ) {
 		$the_query->the_post();
-		// List element
-		echo '<li><h6>';
+		// Column element
+		echo '<div class="column"><h6>';
 		// Link
 		echo '<a href="' . get_permalink( get_post()->ID ) . '" title="' . esc_attr( get_post()->post_title ) . '">';
 		// Thumbnail
@@ -150,10 +150,10 @@ if ( $the_query->have_posts() ) {
 		echo '<a href="' . get_permalink( get_post()->ID ) . '" title="' . esc_attr( get_post()->post_title ) . '">';
 		// Title
 		echo '<span class="headline">' . get_the_title( get_post()->ID ) . '</span>';
-		echo '</a></h6></li>';
+		echo '</a></h6></div>';
 		$i++;
 	}
-	echo '</ul>';
+	echo '</div>';
 }
 
 else {
@@ -194,11 +194,11 @@ $the_query = new WP_Query( $args );
 remove_filter( 'posts_where', 'wpse_no_attachments' );
 
 if ( $the_query->have_posts() ) {
-	echo '<ul class="large-block-grid-2 medium-block-grid-2 small-block-grid-1">';
+	echo '<div class="row small-up-1 medium-up-2 large-up-2">';
 	while ( $the_query->have_posts() ) {
 		$the_query->the_post();
-		// List element
-		echo '<li><h6>';
+		// Column element
+		echo '<div class="column"><h6>';
 		// Subcategory
 		echo '<span class="subcategory-name">';
 		$category = get_the_category();
@@ -213,9 +213,9 @@ if ( $the_query->have_posts() ) {
 		echo '<a href="' . get_permalink( get_post()->ID ) . '" title="' . esc_attr( get_post()->post_title ) . '">';
 		// Title
 		echo '<span class="headline">' . get_the_title( get_post()->ID ) . '</span>';
-		echo '</a></h6></li>';
+		echo '</a></h6></div>';
 	}
-	echo '</ul>';
+	echo '</div>';
 }
 else {
 	// no posts found
@@ -225,7 +225,7 @@ wp_reset_postdata();
 }
 
 /**
-Returns a list of news posts without thumbnails, excluding the latest news post, for mobile view
+ * Returns a list of news posts without thumbnails, excluding the latest news post, for mobile view
 **/
 function get_news_list_mobile() {
 

@@ -12,20 +12,20 @@ function get_opinion_list() {
 $the_query = new WP_Query( $args );
 
 if ( $the_query->have_posts() ) {
-	echo '<ul class="large-block-grid-2 medium-block-grid-2 small-block-grid-1">';
+	echo '<div class="row small-up-1 medium-up-2 large-up-2">';
 	while ( $the_query->have_posts() ) {
 		$the_query->the_post();
-		// List element
-		echo '<li><h6>';
+		// Column element
+		echo '<div class="column"><h6>';
 		// Author name
 		echo '<span class="author-name">' . get_the_author_link() . '</span> · ';
 		// Link
 		echo '<a href="' . get_permalink( get_post()->ID ) . '" title="' . esc_attr( get_post()->post_title ) . '">';
 		// Title
 		echo '<span class="headline">' . get_the_title( get_post()->ID ) . '</span>';
-		echo '</a></h6></li>';
+		echo '</a></h6></div>';
 	}
-	echo '</ul>';
+	echo '</div>';
 }
 else {
 	// no posts found
