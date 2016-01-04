@@ -45,6 +45,19 @@ require_once( 'library/custom-nav.php' );
 /** Change WP's sticky post class */
 require_once( 'library/sticky-posts.php' );
 
+/** Section specific functions */
+require_once( 'library/sections/common.php' );
+
+require_once( 'library/sections/featured.php' );
+
+require_once( 'library/sections/news.php' );
+
+require_once( 'library/sections/opinion.php' );
+
+require_once( 'library/sections/culture.php' );
+
+require_once( 'library/sections/sports.php' );
+
 /** If your site requires protocol relative url's for theme assets, uncomment the line below */
 // require_once( 'library/protocol-relative-theme-assets.php' );
 
