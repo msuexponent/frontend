@@ -46,8 +46,8 @@
 
 $global-font-size: 100%;
 $global-width: rem-calc(1300);
-$global-lineheight: 1.35;
-$primary-color: #2199e8;
+$global-lineheight: 1.4;
+$primary-color: #2c3e63;
 $secondary-color: #777;
 $success-color: #3adb76;
 $warning-color: #ffae00;
@@ -60,7 +60,7 @@ $black: #0a0a0a;
 $white: #fefefe;
 $body-background: $site-gray;
 $body-font-color: $black;
-$body-font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+$body-font-family: "Roboto", 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
 $body-antialiased: true;
 $global-margin: 1rem;
 $global-padding: 1rem;
@@ -124,7 +124,7 @@ $header-margin-bottom: 0.5rem;
 $header-text-rendering: optimizeLegibility;
 $small-font-size: 80%;
 $header-small-font-color: $medium-gray;
-$paragraph-lineheight: 1.6;
+$paragraph-lineheight: 1.5;
 $paragraph-margin-bottom: 1rem;
 $paragraph-text-rendering: optimizeLegibility;
 $code-color: $black;
