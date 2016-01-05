@@ -542,6 +542,6 @@ $tooltip-radius: $global-radius;
 // -----------
 
 $topbar-padding: 0;
-$topbar-background: #121212;
-$topbar-link-color: #ffffff;
+$topbar-background: $primary-color;
+$topbar-link-color: $white;
 $topbar-input-width: 200px;
