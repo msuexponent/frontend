@@ -1,4 +1,10 @@
 <?php
+/**
+ * Opinion posts
+ *
+ * 1. List
+ * 2. Mobile
+ */
 
 /**
  * Returns a list of news posts without thumbnails, excluding the three posts already shown
@@ -22,7 +28,7 @@ if ( $the_query->have_posts() ) {
 		// Link
 		echo '<a href="' . get_permalink( get_post()->ID ) . '" title="' . esc_attr( get_post()->post_title ) . '">';
 		// Title
-		echo '<span class="headline">' . get_the_title( get_post()->ID ) . '</span>';
+		echo get_the_title( get_post()->ID );
 		echo '</a></h6></div>';
 	}
 	echo '</div>';
@@ -37,7 +43,7 @@ wp_reset_postdata();
 /**
  * Returns a list of opinion posts for the mobile view
 **/
-function get_opinion_list_mobile() {
+function get_opinion_mobile() {
 	$args = array (
 	'posts_per_page' => 6,
 	'category_name' => 'opinion',
@@ -49,7 +55,7 @@ if ( $the_query->have_posts() ) {
 	echo '<ul class="no-bullet">';
 	while ( $the_query->have_posts() ) {
 		$the_query->the_post();
-		echo '<li><h6><a class="headline" href="' . get_permalink( get_post()->ID ) . '" title="' . esc_attr( get_post()->post_title ) . '">';
+		echo '<li><h6><a href="' . get_permalink( get_post()->ID ) . '" title="' . esc_attr( get_post()->post_title ) . '">';
 		echo get_the_title( get_post()->ID ) . '</a></h6></li>';
 	}
 	echo '</ul>';

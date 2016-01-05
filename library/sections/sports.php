@@ -1,4 +1,10 @@
 <?php
+/**
+ * Sports posts
+ *
+ * 1. Latest posts
+ * 2.
+ */
 
 // Excluded posts from post list
 $excluded_sports_1;
@@ -7,7 +13,7 @@ $excluded_sports_2;
 /**
  * Returns the two latest sports post titles and thumbnails
 **/
-function get_latest_sports_posts() {
+function get_sports_latest_posts() {
 
 	$args = array (
 	'posts_per_page' => 2,
@@ -50,7 +56,7 @@ if ( $the_query->have_posts() ) {
 		// Link
 		echo '<a href="' . get_permalink( get_post()->ID ) . '" title="' . esc_attr( get_post()->post_title ) . '">';
 		// Title
-		echo '<span class="headline">' . get_the_title( get_post()->ID ) . '</span>';
+		echo get_the_title( get_post()->ID );
 		echo '</a></h5>';
 		echo '</div>';
 		$i++;
@@ -103,7 +109,7 @@ if ( $the_query->have_posts() ) {
 		// Link
 		echo '<a href="' . get_permalink( get_post()->ID ) . '" title="' . esc_attr( get_post()->post_title ) . '">';
 		// Title
-		echo '<span class="headline">' . get_the_title( get_post()->ID ) . '</span>';
+		echo get_the_title( get_post()->ID );
 		echo '</a></h6></div>';
 	}
 	echo '</div>';
@@ -118,7 +124,7 @@ wp_reset_postdata();
 /**
  * Returns sports posts without thumbnails as a block grid, for the mobile view
 **/
-function get_sports_list_mobile() {
+function get_sports_mobile() {
 
 	$args = array (
 	'posts_per_page' => 6,
@@ -132,7 +138,7 @@ if ( $the_query->have_posts() ) {
 	while ( $the_query->have_posts() ) {
 		$the_query->the_post();
 		// Link
-		echo '<li><h6><a class="headline" href="' . get_permalink( get_post()->ID ) . '" title="' . esc_attr( get_post()->post_title ) . '">';
+		echo '<li><h6><a href="' . get_permalink( get_post()->ID ) . '" title="' . esc_attr( get_post()->post_title ) . '">';
 		// Title
 		echo get_the_title( get_post()->ID ) . '</a></h6></li>';
 	}

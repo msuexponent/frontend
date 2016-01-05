@@ -1,6 +1,46 @@
 <?php
+/**
+ * Featured posts
+ *
+ * 1. Title
+ * 2. Thumbnail
+ * 3. Excerpt
+ * 4. List
+ * 5. Mobile
+ */
 
 $excluded_featured = 0;
+
+/**
+ * Returns the latest featured post title
+**/
+function get_featured_title() {
+
+	$args = array (
+	'posts_per_page' => 1,
+	'category_name' => 'featured',
+	'meta_key' => '_thumbnail_id'
+);
+
+$the_query = new WP_Query( $args );
+
+if ( $the_query->have_posts() ) {
+	while ( $the_query->have_posts() ) {
+		$the_query->the_post();
+		$GLOBALS['excluded_featured'] = get_post()->ID;
+		// Link
+		echo '<h4><a href="' . get_permalink( get_post()->ID ) . '" title="' . esc_attr( get_post()->post_title ) . '">';
+		// Title
+		echo get_the_title( get_post()->ID );
+		echo '</a></h4>';
+	}
+}
+else {
+	// no posts found
+}
+
+wp_reset_postdata();
+}
 
 /**
  * Returns the latest featured post thumbnail
@@ -33,37 +73,6 @@ wp_reset_postdata();
 }
 
 /**
- * Returns the latest featured post title
-**/
-function get_featured_title() {
-
-	$args = array (
-	'posts_per_page' => 1,
-	'category_name' => 'featured',
-	'meta_key' => '_thumbnail_id'
-);
-
-$the_query = new WP_Query( $args );
-
-if ( $the_query->have_posts() ) {
-	while ( $the_query->have_posts() ) {
-		$the_query->the_post();
-		$GLOBALS['excluded_featured'] = get_post()->ID;
-		// Link
-		echo '<a href="' . get_permalink( get_post()->ID ) . '" title="' . esc_attr( get_post()->post_title ) . '">';
-		// Title
-		echo '<span class="featured-headline">' . get_the_title( get_post()->ID ) . '</span>';
-		echo '</a>';
-	}
-}
-else {
-	// no posts found
-}
-
-wp_reset_postdata();
-}
-
-/**
  * Returns a sentence as an excerpt for the latest featured post
 **/
 function get_featured_excerpt() {
@@ -81,12 +90,13 @@ $the_query = new WP_Query( $args );
 if ( $the_query->have_posts() ) {
 	while ( $the_query->have_posts() ) {
 		$the_query->the_post();
+		// Paragraph
+		echo '<p>';
 		// Date
-		echo '<span class="excerpt-date">';
 		echo get_the_date( 'M j, Y · ' );
-		echo '</span>';
 		// Excerpt
 		echo the_advanced_excerpt( $excerpt_args );
+		echo '</p>';
 	}
 }
 else {
@@ -115,7 +125,7 @@ if ( $the_query->have_posts() ) {
 	while ( $the_query->have_posts() ) {
 		$the_query->the_post();
 		// Link
-		echo '<div class="column"><h6><a class="headline" href="' . get_permalink( get_post()->ID ) . '" title="' . esc_attr( get_post()->post_title ) . '">';
+		echo '<div class="column"><h6><a href="' . get_permalink( get_post()->ID ) . '" title="' . esc_attr( get_post()->post_title ) . '">';
 		// Thumbnail
 		echo get_the_post_thumbnail( get_post()->ID, 'size-thumbnail-small', array( 'class'	=> "get_two_latest_featured" ) );
 		echo '<br/>';
@@ -152,7 +162,7 @@ if ( $the_query->have_posts() ) {
 	while ( $the_query->have_posts() ) {
 		$the_query->the_post();
 		// Link
-		echo '<li><h6><a class="headline" href="' . get_permalink( get_post()->ID ) . '" title="' . esc_attr( get_post()->post_title ) . '">';
+		echo '<li><h6><a href="' . get_permalink( get_post()->ID ) . '" title="' . esc_attr( get_post()->post_title ) . '">';
 		// Title
 		echo get_the_title( get_post()->ID ) . '</a></h6></li>';
 	}

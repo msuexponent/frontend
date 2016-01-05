@@ -1,4 +1,11 @@
 <?php
+/**
+ * Culture posts
+ *
+ * 1. Latest posts
+ * 2. List
+ * 3. Mobile
+ */
 
 // Excluded posts from post list
 $excluded_culture_1;
@@ -7,7 +14,7 @@ $excluded_culture_2;
 /**
  * Returns the two latest culture post titles and thumbnails
 **/
-function get_latest_culture_posts() {
+function get_culture_latest_posts() {
 	$args = array (
 	'posts_per_page' => 2,
 	'category_name' => 'culture',
@@ -49,7 +56,7 @@ if ( $the_query->have_posts() ) {
 		// Link
 		echo '<a href="' . get_permalink( get_post()->ID ) . '" title="' . esc_attr( get_post()->post_title ) . '">';
 		// Title
-		echo '<span class="headline">' . get_the_title( get_post()->ID ) . '</span>';
+		echo get_the_title( get_post()->ID );
 		echo '</a></h5></div>';
 		$i++;
 	}
@@ -101,7 +108,7 @@ if ( $the_query->have_posts() ) {
 		// Link
 		echo '<a href="' . get_permalink( get_post()->ID ) . '" title="' . esc_attr( get_post()->post_title ) . '">';
 		// Title
-		echo '<span class="headline">' . get_the_title( get_post()->ID ) . '</span>';
+		echo get_the_title( get_post()->ID );
 		echo '</a></h6></div>';
 	}
 	echo '</div>';
@@ -116,7 +123,7 @@ wp_reset_postdata();
 /**
  * Returns culture posts without thumbnails as a block grid for mobile view
 **/
-function get_culture_list_mobile() {
+function get_culture_mobile() {
 
 	$args = array (
 	'posts_per_page' => 6,
@@ -132,7 +139,7 @@ if ( $the_query->have_posts() ) {
 		// Link
 		echo '<li><h6><a href="' . get_permalink( get_post()->ID ) . '" title="' . esc_attr( get_post()->post_title ) . '">';
 		// Title
-		echo '<span class="headline">' . get_the_title( get_post()->ID ) . '</span>';
+		echo get_the_title( get_post()->ID );
 		echo '</a></h6></li>';
 	}
 	echo '</ul>';

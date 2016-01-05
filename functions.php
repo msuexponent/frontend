@@ -54,6 +54,8 @@ require_once( 'library/sections/news.php' );
 
 require_once( 'library/sections/opinion.php' );
 
+require_once( 'library/sections/multimedia.php' );
+
 require_once( 'library/sections/culture.php' );
 
 require_once( 'library/sections/sports.php' );

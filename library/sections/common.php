@@ -1,4 +1,14 @@
 <?php
+/**
+ * Common functions
+ *
+ * Category list as labels
+ * Post attachment images
+ * Section labels
+ * More posts arrow
+ * Co-Authors support
+ * Posts with no attachments
+ */
 
 /**
  * Get list of categories as labels
@@ -67,6 +77,19 @@ function coauthors_author_info() {
 	} else {
 		the_author_posts_link();
 	}
+}
+
+/**
+ * Return posts without attachments
+**/
+function wpse_no_attachments( $where )
+{
+	global $wpdb;
+	$where .= " AND {$wpdb->posts}.ID NOT IN (
+	SELECT DISTINCT wpse.post_parent
+	FROM {$wpdb->posts} wpse
+	WHERE wpse.post_type = 'attachment' AND wpse.post_parent > 0  ) ";
+	return $where;
 }
 
 ?>

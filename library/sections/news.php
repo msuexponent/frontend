@@ -1,4 +1,14 @@
 <?php
+/**
+ * News posts
+ *
+ * 1. Title
+ * 2. Thumbnail
+ * 3. Excerpt
+ * 4. List with thumbnails
+ * 5. List without thumbnails
+ * 6. Mobile
+ */
 
 // Excluded posts from post list
 $excluded_news_1;
@@ -21,7 +31,9 @@ if ( $the_query->have_posts() ) {
 		$the_query->the_post();
 		// Set excluded main post
 		$GLOBALS['excluded_news_1'] = get_post()->ID;
-		// Subcategory
+		// Heading
+		echo '<h5>';
+		// Subcategory, if present
 		echo '<span class="subcategory-name">';
 		$category = get_the_category();
 		foreach( ( get_the_category() ) as $childcat ) {
@@ -35,8 +47,8 @@ if ( $the_query->have_posts() ) {
 		// Link
 		echo '<a href="' . get_permalink( get_post()->ID ) . '" title="' . esc_attr( get_post()->post_title ) . '">';
 		// Title
-		echo '<span class="headline">' . get_the_title( get_post()->ID ) . '</span>';
-		echo '</a>';
+		echo get_the_title( get_post()->ID );
+		echo '</a></h5>';
 	}
 }
 else {
@@ -94,12 +106,13 @@ $the_query = new WP_Query( $args );
 if ( $the_query->have_posts() ) {
 	while ( $the_query->have_posts() ) {
 		$the_query->the_post();
+		// Paragraph
+		echo '<p>';
 		// Date
-		echo '<span class="excerpt-date">';
 		echo get_the_date( 'M j, Y · ' );
-		echo '</span>';
 		// Excerpt
 		echo the_advanced_excerpt( $excerpt_args );
+		echo '</p>';
 	}
 }
 else {
@@ -149,7 +162,7 @@ if ( $the_query->have_posts() ) {
 		// Link
 		echo '<a href="' . get_permalink( get_post()->ID ) . '" title="' . esc_attr( get_post()->post_title ) . '">';
 		// Title
-		echo '<span class="headline">' . get_the_title( get_post()->ID ) . '</span>';
+		echo get_the_title( get_post()->ID );
 		echo '</a></h6></div>';
 		$i++;
 	}
@@ -161,19 +174,6 @@ else {
 }
 
 wp_reset_postdata();
-}
-
-/**
- * Return posts without attachments
-**/
-function wpse_no_attachments( $where )
-{
-	global $wpdb;
-	$where .= " AND {$wpdb->posts}.ID NOT IN (
-	SELECT DISTINCT wpse.post_parent
-	FROM {$wpdb->posts} wpse
-	WHERE wpse.post_type = 'attachment' AND wpse.post_parent > 0  ) ";
-	return $where;
 }
 
 /**
@@ -212,7 +212,7 @@ if ( $the_query->have_posts() ) {
 		// Link
 		echo '<a href="' . get_permalink( get_post()->ID ) . '" title="' . esc_attr( get_post()->post_title ) . '">';
 		// Title
-		echo '<span class="headline">' . get_the_title( get_post()->ID ) . '</span>';
+		echo get_the_title( get_post()->ID );
 		echo '</a></h6></div>';
 	}
 	echo '</div>';
@@ -244,7 +244,7 @@ if ( $the_query->have_posts() ) {
 		// Link
 		echo '<li><h6><a href="' . get_permalink( get_post()->ID ) . '" title="' . esc_attr( get_post()->post_title ) . '">';
 		// Title
-		echo '<span class="headline">' . get_the_title( get_post()->ID ) . '</span>';
+		echo get_the_title( get_post()->ID );
 		echo '</a></h6></li>';
 	}
 	echo '</ul>';
