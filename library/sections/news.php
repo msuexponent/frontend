@@ -163,7 +163,7 @@ if ( $the_query->have_posts() ) {
 		echo '<a href="' . get_permalink( get_post()->ID ) . '" title="' . esc_attr( get_post()->post_title ) . '">';
 		// Title
 		echo get_the_title( get_post()->ID );
-		echo '</a></h6></div>';
+		echo '</a></h6><br/></div>';
 		$i++;
 	}
 	echo '</div>';
