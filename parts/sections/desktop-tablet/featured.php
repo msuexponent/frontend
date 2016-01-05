@@ -1,15 +1,15 @@
 <!-- // Featured // -->
 
-<div class="row" data-equalizer>
+<div class="row">
 
-	<div class="medium-5 columns" data-equalizer-watch>
+	<div class="medium-5 columns">
 
 		<!-- Latest post thumbnail -->
 		<?php get_featured_thumbnail(); ?>
 
 	</div>
 
-	<div class="medium-7 columns" data-equalizer-watch>
+	<div class="medium-7 columns">
 
 		<!-- Latest post title -->
 		<h3>
@@ -29,8 +29,8 @@
 </div>
 
 <!-- Get more posts -->
-<div class="row" data-equalizer>
-	<div class="medium-12 columns" data-equalizer-watch>
+<div class="row">
+	<div class="medium-12 columns">
 		<?php get_more_posts("featured"); ?>
 	</div>
 </div>
