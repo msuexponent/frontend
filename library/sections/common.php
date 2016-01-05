@@ -53,7 +53,7 @@ function get_post_attachments( $args=array() ) {
  * Prints section label
  */
 function get_label( $label ) {
-	echo '<a href="' . site_url() . '/' . $label . '/"><div class="category-label">' . $label . '</div></a>';
+	echo '<h5><a href="' . site_url() . '/' . $label . '/">' . $label . '</a></h5>';
 }
 
 /**
