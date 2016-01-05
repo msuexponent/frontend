@@ -9,7 +9,7 @@ function get_category_list() {
 	$output = '';
 	if( $categories ){
 		foreach( $categories as $category ) {
-			$output .= '<a class="round radius label" href="'.get_category_link( $category->term_id ).'" title="' . esc_attr( sprintf( __( "View all posts in %s" ), $category->name ) ) . '">'.$category->cat_name.'</a>'.$separator;
+			$output .= '<a class="round radius label" href="' . get_category_link( $category->term_id ) . '" title="' . esc_attr( sprintf( __( "View all posts in %s" ), $category->name ) ) . '">'.$category->cat_name.'</a>'.$separator;
 		}
 		echo trim( $output, $separator );
 	}
@@ -51,10 +51,10 @@ function get_label( $label ) {
 **/
 function get_more_posts( $cat_name ) {
 	if ( $cat_name == "multimedia" ) {
-		echo '<a class="more-posts" href="https://www.youtube.com/user/ASMSUExponent" target="_blank">→</a>';
+		echo '<a href="https://www.youtube.com/user/ASMSUExponent" target="_blank"><p class="text-right">→</p></a>';
 	}
 	else {
-		echo '<a class="more-posts" href="' . site_url() . '/' . $cat_name . '/">→</a>';
+		echo '<a href="' . site_url() . '/' . $cat_name . '/"><p class="text-right">→</p></a>';
 	}
 }
 
