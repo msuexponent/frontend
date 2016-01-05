@@ -107,7 +107,7 @@ if ( $the_query->have_posts() ) {
 	while ( $the_query->have_posts() ) {
 		$the_query->the_post();
 		// Paragraph
-		echo '<p>';
+		echo '<p class="excerpt">';
 		// Date
 		echo get_the_date( 'M j, Y · ' );
 		// Excerpt
