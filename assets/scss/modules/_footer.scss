@@ -3,6 +3,12 @@
 	width: 100%;
 	margin: 0 auto;
 	background-color: #484848;
+	color: $light-gray;
+
+	hr {
+		margin: 0;
+		padding: 0;
+	}
 
 	#footer {
 		@include grid-row();

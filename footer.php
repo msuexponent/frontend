@@ -17,6 +17,8 @@
 				<?php do_action( 'foundationpress_before_footer' ); ?>
 				<?php dynamic_sidebar( 'footer-widgets' ); ?>
 				<?php do_action( 'foundationpress_after_footer' ); ?>
+				<hr>
+				<small>© 2015 The MSU Exponent. All rights reserved.</small>
 			</footer>
 		</div>
 
