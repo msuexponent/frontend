@@ -16,7 +16,7 @@
     text-transform: lowercase;
 
     &:hover:not(.button) {
-      background-color: $black;
+      color: #f0ad00;
     }
   }
 
@@ -39,6 +39,11 @@
   .dropdown.menu .has-submenu.is-down-arrow a {
     padding-right: 1rem;
     color: $white;
+  }
+
+  .dropdown.menu .has-submenu.is-down-arrow a:hover:not(.button) {
+    padding-right: 1rem;
+    color: #f0ad00;
   }
 
   .dropdown.menu .has-submenu.is-down-arrow>a::after {

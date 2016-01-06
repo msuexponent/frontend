@@ -2,6 +2,20 @@
  * Front page styles
  */
 
+#logo {
+	background-color: $white;
+	img {
+		width: 40%;
+		padding-top: 0.75rem;
+		padding-bottom: 0.75rem;
+	}
+	.search-box {
+		width: 80%;
+		margin-top: 2.5rem;
+		float: right;
+	}
+}
+
 .excerpt {
 	font-size: 85%;
 }

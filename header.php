@@ -43,6 +43,17 @@
 			</div>
 		</div>
 
+		<div id="logo">
+			<div class="row show-for-medium-up">
+				<div class="medium-8 columns">
+					<a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri();?>/assets/images/site/exponent-logo.png"></a>
+				</div>
+				<div class="medium-4 columns">
+					<div class="search-box"><?php get_search_form(); ?></div>
+				</div>
+			</div>
+		</div>
+
 		<nav id="site-navigation" class="main-navigation top-bar" role="navigation">
 			<div class="row">
 				<div class="top-bar-left show-for-medium">
