@@ -96,7 +96,7 @@ $block-grid-max: 8;
 // 4. Base Typography
 // ------------------
 
-$header-font-family: $body-font-family;
+$header-font-family: "Lato";
 $header-font-weight: $global-weight-normal;
 $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
@@ -115,7 +115,7 @@ $header-sizes: (
     'h3': 31,
     'h4': 25,
     'h5': 18,
-    'h6': 15,
+    'h6': 16,
   ),
 );
 $header-color: inherit;
