@@ -1,6 +1,9 @@
 #page {
+  background-color: $white;
   @include grid-row();
-  margin-top: 3rem;
+  padding-top: 2rem;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
 
   .main-content {
     @include breakpoint(small) {

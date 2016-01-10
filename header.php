@@ -20,6 +20,10 @@
 		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/icons/apple-touch-icon-114x114-precomposed.png">
 		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/icons/apple-touch-icon-72x72-precomposed.png">
 		<link rel="apple-touch-icon-precomposed" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/icons/apple-touch-icon-precomposed.png">
+		<!-- Google Web Fonts -->
+		<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
 		<?php wp_head(); ?>
 	</head>
 	<body <?php body_class(); ?>>
@@ -41,20 +45,35 @@
 			</div>
 		</div>
 
-		<nav id="site-navigation" class="main-navigation top-bar" role="navigation">
-			<div class="top-bar-left show-for-medium">
-				<ul class="menu">
-					<li class="home"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></li>
-				</ul>
+		<div id="logo">
+			<div class="row show-for-medium-up">
+				<div class="medium-8 columns">
+					<a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri();?>/assets/images/site/exponent-logo.png"></a>
+				</div>
+				<div class="medium-4 columns">
+					<div class="search-box"><?php get_search_form(); ?></div>
+				</div>
 			</div>
-			<div class="top-bar-right">
-				<?php foundationpress_top_bar_r(); ?>
+		</div>
 
-				<?php if ( ! get_theme_mod( 'wpt_mobile_menu_layout' ) || get_theme_mod( 'wpt_mobile_menu_layout' ) == 'topbar' ) : ?>
-					<?php get_template_part( 'parts/mobile-top-bar' ); ?>
-				<?php endif; ?>
+		<nav id="site-navigation" class="main-navigation top-bar" role="navigation">
+			<div class="row">
+				<div class="top-bar-left show-for-medium">
+					<ul class="menu">
+						<?php foundationpress_top_bar_l(); ?>
+					</ul>
+				</div>
+				<div class="top-bar-right">
+					<?php foundationpress_top_bar_r(); ?>
+
+					<?php if ( ! get_theme_mod( 'wpt_mobile_menu_layout' ) || get_theme_mod( 'wpt_mobile_menu_layout' ) == 'topbar' ) : ?>
+						<?php get_template_part( 'parts/mobile-top-bar' ); ?>
+					<?php endif; ?>
+				</div>
 			</div>
 		</nav>
+
+
 	</header>
 
 	<section class="container">
