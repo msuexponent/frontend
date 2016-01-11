@@ -14,7 +14,7 @@
 </section>
 
 <!-- Owl Carousel-->
-<script src=".components/owlcarousel/owl-carousel/owl.carousel.js"></script>
+<script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/components/owlcarousel/owl-carousel/owl.carousel.js"></script>
 
 <div id="footer-nav">
 	<div class="row">

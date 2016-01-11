@@ -22,8 +22,8 @@
 @import 'motion-ui';
 
 // Owl Carousel
-@import '../components/owlcarousel/owl.carousel.css';
-@import '../components/owlcarousel/owl.theme.css';
+@import '../components/owlcarousel/owl-carousel/owl.carousel.css';
+@import '../components/owlcarousel/owl-carousel/owl.theme.css';
 
 // Foundation global styles
 @include foundation-global-styles;
