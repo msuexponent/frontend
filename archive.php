@@ -25,7 +25,7 @@ get_header(); ?>
 
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
-				<?php get_template_part( 'parts/loop/archive-grid' ); ?>
+				<?php get_template_part( 'parts/loop', 'archive-grid' ); ?>
 			<?php endwhile; ?>
 
 			<?php else : ?>
