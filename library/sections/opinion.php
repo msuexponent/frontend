@@ -22,14 +22,14 @@ if ( $the_query->have_posts() ) {
 	while ( $the_query->have_posts() ) {
 		$the_query->the_post();
 		// Column element
-		echo '<div class="column"><h6>';
+		echo '<div class="opinion column">';
 		// Author name
-		echo '<span class="author-name">' . get_the_author_link() . '</span> · ';
+		echo coauthors_author_info() . ' · ';
 		// Link
-		echo '<a href="' . get_permalink( get_post()->ID ) . '" title="' . esc_attr( get_post()->post_title ) . '">';
+		echo '<a class="headline" href="' . get_permalink( get_post()->ID ) . '" title="' . esc_attr( get_post()->post_title ) . '">';
 		// Title
 		echo get_the_title( get_post()->ID );
-		echo '</a></h6></div>';
+		echo '</a></div>';
 	}
 	echo '</div>';
 }

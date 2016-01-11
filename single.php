@@ -32,10 +32,10 @@ get_header(); ?>
 			<div class="row">
 
 				<!-- Author Information -->
-				<?php get_template_part('parts/single-post', 'author'); ?>
+				<?php get_template_part('parts/single', 'post-author'); ?>
 
 				<!-- Content -->
-				<?php get_template_part('parts/single-post', 'content'); ?>
+				<?php get_template_part('parts/single', 'post-content'); ?>
 
 				<!-- Blank column -->
 				<div class="large-2 columns"></div>

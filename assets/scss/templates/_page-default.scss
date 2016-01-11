@@ -27,4 +27,24 @@
     color: $medium-gray;
   }
 
+  .excerpt {
+    font-size: 85%;
+  }
+
+  .opinion {
+    margin: 0 auto;
+    padding-bottom: 0.5rem;
+
+    a {
+      font-size: 16;
+      font-family: "Lato";
+      color: $black;
+    }
+
+    .headline {
+      color: $primary-color;
+    }
+
+  }
+
 }
