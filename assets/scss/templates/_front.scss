@@ -4,15 +4,24 @@
 
 #logo {
 	background-color: $white;
+
 	img {
 		width: 40%;
 		padding-top: 0.75rem;
 		padding-bottom: 0.75rem;
 	}
-	.search-box {
-		width: 80%;
+
+	.icon-box {
 		margin-top: 2.5rem;
+		margin-right: 2.25rem;
 		float: right;
+		a {
+			color: $medium-gray;
+			padding-right: 0.25rem;
+		}
+		a:hover {
+			color: $primary-color;
+		}
 	}
 }
 

@@ -51,7 +51,7 @@
 					<a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri();?>/assets/images/site/exponent-logo.png"></a>
 				</div>
 				<div class="medium-4 columns">
-					<div class="search-box"><?php get_search_form(); ?></div>
+					<?php get_template_part( 'parts/header', 'icon-box' ); ?>
 				</div>
 			</div>
 		</div>
