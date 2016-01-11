@@ -19,7 +19,7 @@ function get_category_list() {
 	$output = '';
 	if( $categories ){
 		foreach( $categories as $category ) {
-			$output .= '<a class="round radius label" href="' . get_category_link( $category->term_id ) . '" title="' . esc_attr( sprintf( __( "View all posts in %s" ), $category->name ) ) . '">'.$category->cat_name.'</a>'.$separator;
+			$output .= '<a class="label" href="' . get_category_link( $category->term_id ) . '" title="' . esc_attr( sprintf( __( "View all posts in %s" ), $category->name ) ) . '">'.$category->cat_name.'</a>'.$separator;
 		}
 		echo trim( $output, $separator );
 	}
