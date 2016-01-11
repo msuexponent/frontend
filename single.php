@@ -1,47 +1,49 @@
 <?php
 /**
- * The template for displaying all single posts and attachments
- *
- * @package WordPress
- * @subpackage FoundationPress
- * @since FoundationPress 1.0.0
- */
+* The template for displaying all single posts and attachments
+*
+* @package WordPress
+* @subpackage FoundationPress
+* @since FoundationPress 1.0.0
+*/
 
 get_header(); ?>
 
 <div id="single-post" role="main">
 
-<?php do_action( 'foundationpress_before_content' ); ?>
-<?php while ( have_posts() ) : the_post(); ?>
-	<article <?php post_class('main-content') ?> id="post-<?php the_ID(); ?>">
-		<header>
-			<h1 class="entry-title"><?php the_title(); ?></h1>
-			<?php foundationpress_entry_meta(); ?>
-		</header>
-		<?php do_action( 'foundationpress_post_before_entry_content' ); ?>
-		<div class="entry-content">
+	<?php do_action( 'foundationpress_before_content' ); ?>
+	<!-- Left blank column -->
+	<div class="large-2 columns"></div>
 
-		<?php if ( has_post_thumbnail() ) : ?>
-			<div class="row">
-				<div class="column">
-					<?php the_post_thumbnail( '', array('class' => 'th') ); ?>
-				</div>
+	<!-- Center Post column -->
+	<div class="small-12 large-8 large-centered columns">
+		<?php while ( have_posts() ) : the_post(); ?>
+			<article id="post-<?php the_ID(); ?>">
+				<header>
+					<h3 class="entry-title"><?php the_title(); ?></h3>
+					<?php do_action( 'foundationpress_post_before_entry_content' ); ?>
+				</header>
 			</div>
-		<?php endif; ?>
 
-		<?php the_content(); ?>
-		</div>
-		<footer>
-			<?php wp_link_pages( array('before' => '<nav id="page-nav"><p>' . __( 'Pages:', 'foundationpress' ), 'after' => '</p></nav>' ) ); ?>
-			<p><?php the_tags(); ?></p>
-		</footer>
-		<?php do_action( 'foundationpress_post_before_comments' ); ?>
-		<?php comments_template(); ?>
-		<?php do_action( 'foundationpress_post_after_comments' ); ?>
-	</article>
-<?php endwhile;?>
+			<!-- Right blank column -->
+			<div class="large-2 columns"></div>
 
-<?php do_action( 'foundationpress_after_content' ); ?>
-<?php get_sidebar(); ?>
+			<!-- Post -->
+			<div class="row">
+
+				<!-- Author Information -->
+				<?php get_template_part('parts/single-post', 'author'); ?>
+
+				<!-- Content -->
+				<?php get_template_part('parts/single-post', 'content'); ?>
+
+				<!-- Blank column -->
+				<div class="large-2 columns"></div>
+
+			</div>
+		</article>
+	<?php endwhile;?>
+
+	<?php do_action( 'foundationpress_after_content' ); ?>
 </div>
 <?php get_footer(); ?>
