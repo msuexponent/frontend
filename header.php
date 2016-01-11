@@ -57,18 +57,20 @@
 		</div>
 
 		<nav id="site-navigation" class="main-navigation top-bar" role="navigation">
-			<div class="row">
-				<div class="top-bar-left show-for-medium">
-					<ul class="menu">
-						<?php foundationpress_top_bar_l(); ?>
-					</ul>
-				</div>
-				<div class="top-bar-right">
-					<?php foundationpress_top_bar_r(); ?>
+			<div id="header-nav">
+				<div id="header-nav-bar" class="row">
+					<div class="top-bar-left show-for-medium">
+						<ul class="menu">
+							<?php foundationpress_top_bar_l(); ?>
+						</ul>
+					</div>
+					<div class="top-bar-right">
+						<?php foundationpress_top_bar_r(); ?>
 
-					<?php if ( ! get_theme_mod( 'wpt_mobile_menu_layout' ) || get_theme_mod( 'wpt_mobile_menu_layout' ) == 'topbar' ) : ?>
-						<?php get_template_part( 'parts/mobile-top-bar' ); ?>
-					<?php endif; ?>
+						<?php if ( ! get_theme_mod( 'wpt_mobile_menu_layout' ) || get_theme_mod( 'wpt_mobile_menu_layout' ) == 'topbar' ) : ?>
+							<?php get_template_part( 'parts/mobile-top-bar' ); ?>
+						<?php endif; ?>
+					</div>
 				</div>
 			</div>
 		</nav>

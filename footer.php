@@ -12,7 +12,7 @@
 ?>
 
 </section>
-<div id="footer-bar">
+<div id="footer-nav">
 	<div class="row">
 		<div class="bar show-for-medium">
 			<a href="#top"><i class="fa fa-chevron-circle-up"></i>&nbsp;&nbsp;&nbsp;back to top</a>
@@ -20,7 +20,7 @@
 </div>
 
 <nav id="site-navigation" class="main-navigation top-bar" role="navigation">
-	<div id="footer-bar">
+	<div id="footer-nav">
 		<div id="footer-nav-bar" class="row">
 			<div class="top-bar-left show-for-medium">
 				<ul class="menu">
