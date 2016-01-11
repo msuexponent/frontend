@@ -12,6 +12,10 @@
 ?>
 
 </section>
+
+<!-- Owl Carousel-->
+<script src=".components/owlcarousel/owl-carousel/owl.carousel.js"></script>
+
 <div id="footer-nav">
 	<div class="row">
 		<div class="bar show-for-medium">
