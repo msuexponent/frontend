@@ -61,10 +61,10 @@ function get_label( $label ) {
 **/
 function get_more_posts( $cat_name ) {
 	if ( $cat_name == "multimedia" ) {
-		echo '<a href="https://www.youtube.com/user/ASMSUExponent" target="_blank"><p class="text-right">→</p></a>';
+		echo '<a class="more-posts" href="https://www.youtube.com/user/ASMSUExponent" target="_blank"><p class="text-right">→</p></a>';
 	}
 	else {
-		echo '<a href="' . site_url() . '/' . $cat_name . '/"><p class="text-right">→</p></a>';
+		echo '<a class="more-posts" href="' . site_url() . '/' . $cat_name . '/"><p class="text-right">→</p></a>';
 	}
 }
 
