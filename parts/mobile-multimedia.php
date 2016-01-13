@@ -5,4 +5,4 @@
 <hr>
 <!-- Latest video -->
 <?php get_multimedia_video(); ?>
-<?php get_more_posts('multimedia'); ?><br/><br/>
+<?php get_more_posts('multimedia'); ?>
