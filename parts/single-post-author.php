@@ -8,7 +8,7 @@
 			<div class="author">
 
 				<!-- Author Gravatar -->
-				<?php echo get_avatar( get_the_author_meta( 'user_email' ), $size = '114', $default = null ); ?><br/><br/>
+				<?php echo get_avatar( get_the_author_meta( 'user_email' ), $size = '114', $default = 'http://i.imgur.com/gxyK809.jpg' ); ?><br/><br/>
 
 				<!-- Author link -->
 				<?php coauthors_author_info(); ?>
@@ -46,7 +46,7 @@
 			<div class="small-2 columns">
 
 				<!-- Author Gravatar -->
-				<?php echo get_avatar( get_the_author_meta( 'user_email' ), $size = '96', $default = null ); ?>
+				<?php echo get_avatar( get_the_author_meta( 'user_email' ), $size = '96', $default = 'http://i.imgur.com/gxyK809.jpg' ); ?>
 
 			</div>
 		</div>
@@ -56,7 +56,7 @@
 		<!-- Social sharing links -->
 		<div class="row">
 			<div class="small-12 columns">
-				
+
 				<?php echo do_shortcode('[ssba]'); ?>
 
 			</div>
