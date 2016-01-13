@@ -2,7 +2,6 @@ $(document).ready(function() {
 
     $("#carousel").owlCarousel({
 
-        autoPlay: 4000,         //Set AutoPlay to 4 seconds
         slideSpeed : 300,
         paginationSpeed : 400,
         singleItem: true,
