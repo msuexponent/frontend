@@ -48,12 +48,18 @@
     }
   }
 
-  #carousel {
-  	.item img {
-  		display: block;
-  		width: 100%;
-  		height: auto;
-  	}
-  }
+  .img-caption {
+			background: rgba(0,0,0,0.5);
+			color: $white;
+			text-shadow: 0 rem-calc(1) 0 rgba(0,0,0,0.6);
+			font-size: 0.9em;
+			line-height: 1.3em;
+			font-style: italic;
+			padding: rem-calc(8) rem-calc(10);
+			position: absolute;
+			bottom: rem-calc(8);
+			left: rem-calc(8);
+			margin-right: rem-calc(8);
+		}
 
 }
