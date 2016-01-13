@@ -34,7 +34,7 @@ if ( $the_query->have_posts() ) {
 		// Heading
 		echo '<h5>';
 		// Subcategory, if present
-		echo '<span class="subcategory-name">';
+		echo '<span class="subcategory">';
 		$category = get_the_category();
 		foreach( ( get_the_category() ) as $childcat ) {
 			if ( cat_is_ancestor_of( 1, $childcat ) ) {
@@ -149,7 +149,7 @@ if ( $the_query->have_posts() ) {
 		echo get_the_post_thumbnail( get_post()->ID, 'size-thumbnail-medium', array( 'class' => "get_two_latest_news" ) );
 		echo '</a><br/>';
 		// Subcategory
-		echo '<span class="subcategory-name">';
+		echo '<span class="subcategory">';
 		$category = get_the_category();
 		foreach( ( get_the_category() ) as $childcat ) {
 			if ( cat_is_ancestor_of( 1, $childcat ) ) {
@@ -200,7 +200,7 @@ if ( $the_query->have_posts() ) {
 		// Column element
 		echo '<div class="column"><h6>';
 		// Subcategory
-		echo '<span class="subcategory-name">';
+		echo '<span class="subcategory">';
 		$category = get_the_category();
 		foreach( ( get_the_category() ) as $childcat ) {
 			if ( cat_is_ancestor_of( 1, $childcat) ) {
