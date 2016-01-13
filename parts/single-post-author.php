@@ -8,7 +8,7 @@
 			<div class="author">
 
 				<!-- Author Gravatar -->
-				<?php echo get_avatar( get_the_author_meta( 'user_email' ), $size = '114', $default = 'http://i.imgur.com/gxyK809.jpg' ); ?><br/><br/>
+				<!-- <?php echo get_avatar( get_the_author_meta( 'user_email' ), $size = '114', $default = 'http://i.imgur.com/gxyK809.jpg' ); ?><br/><br/> -->
 
 				<!-- Author link -->
 				<?php coauthors_author_info(); ?>
