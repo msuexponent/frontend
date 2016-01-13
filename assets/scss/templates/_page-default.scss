@@ -1,6 +1,10 @@
 #page {
+  background-color: $white;
   @include grid-row();
-  margin-top: 3rem;
+  padding-top: 2rem;
+  padding-bottom: 0.8rem;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
 
   .main-content {
     @include breakpoint(small) {
@@ -10,6 +14,37 @@
     @include breakpoint(medium) {
       @include grid-column(8);
     }
+  }
+
+  .subcategory {
+    color: $black;
+  }
+
+  .more-posts {
+    float:right;
+    text-transform: uppercase;
+    font-size: 1.2em;
+    color: $medium-gray;
+  }
+
+  .excerpt {
+    font-size: 85%;
+  }
+
+  .opinion {
+    margin: 0 auto;
+    padding-bottom: 0.5rem;
+
+    a {
+      font-size: 16;
+      font-family: "Lato";
+      color: $black;
+    }
+
+    .headline {
+      color: $primary-color;
+    }
+
   }
 
 }

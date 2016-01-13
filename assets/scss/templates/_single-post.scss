@@ -1,6 +1,10 @@
 #single-post {
+  background-color: $white;
   @include grid-row();
-  margin-top: 3rem;
+  padding-top: 2rem;
+  padding-bottom: 0.8rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 
   .main-content {
     @include breakpoint(small) {
@@ -11,5 +15,51 @@
       @include grid-column(8);
     }
   }
+
+  .meta {
+    font-family: $header-font-family;
+  }
+
+  .author {
+    font-size: 1.1rem;
+    // Rounded author avatar
+    img {
+      border-radius: 50%;
+      -moz-border-radius: 50%;
+      -webkit-border-radius: 50%;
+    }
+  }
+
+  .date {
+    font-size: 0.9rem;
+  }
+
+  // Category label list
+  .category-list {
+    .label {
+      color: #333333;
+      background-color: #f1f1f1;
+      font-family: $header-font-family;
+      font-size: 0.9em;
+      line-height: 1.5em;
+      padding-left: 0.6em;
+      padding-right: 0.6em;
+      margin-right: 0.5em;
+    }
+  }
+
+  .img-caption {
+			background: rgba(0,0,0,0.5);
+			color: $white;
+			text-shadow: 0 rem-calc(1) 0 rgba(0,0,0,0.6);
+			font-size: 0.9em;
+			line-height: 1.3em;
+			font-style: italic;
+			padding: rem-calc(8) rem-calc(10);
+			position: absolute;
+			bottom: rem-calc(8);
+			left: rem-calc(8);
+			margin-right: rem-calc(8);
+		}
 
 }

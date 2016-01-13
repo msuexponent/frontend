@@ -21,7 +21,16 @@
 @import 'font-awesome';
 @import 'motion-ui';
 
-// Foundation global styles 
+// Google Fonts
+@import url("https://fonts.googleapis.com/css?family=Lato");
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab:400,700");
+
+// Slick Carousel
+@import '../components/slick-carousel/slick/slick.scss';
+@import 'components/slick';
+
+// Foundation global styles
 @include foundation-global-styles;
 
 // Individual foundation components

@@ -56,6 +56,9 @@ var PATHS = {
     // Motion UI
     'assets/components/motion-ui/motion-ui.js',
 
+    // Slick Carousel
+    'assets/components/slick-carousel/slick/slick.min.js',
+
     // Include your own custom scripts (located in the custom folder)
     'assets/javascript/custom/*.js'
   ],

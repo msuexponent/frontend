@@ -2,8 +2,14 @@
 	max-width: 100%;
 	width: 100%;
 	margin: 0 auto;
-	border-top: 1px solid #ccc;
-	margin-top: rem-calc(60);
+	background-color: #484848;
+	color: $light-gray;
+	font-family: "Roboto";
+
+	hr {
+		margin: 0;
+		padding: 0;
+	}
 
 	#footer {
 		@include grid-row();
@@ -15,4 +21,31 @@
 			padding: 0;
 		}
 	}
+}
+
+#footer-nav {
+	max-width: 100%;
+	width: 100%;
+	margin: 0 auto;
+	background-color: lighten($primary-color, 10%);
+	font-family: "Lato";
+	font-weight: bold;
+
+	.bar {
+		background-color: lighten($primary-color, 5%);
+		padding-left: 1rem;
+		padding-top: 0.75rem;
+		padding-bottom: 0.75rem;
+		a {
+			color: $light-gray;
+		}
+		a:hover {
+			color: #f0ad00;
+		}
+	}
+
+}
+
+#footer-nav-bar {
+	background-color: $primary-color;
 }
