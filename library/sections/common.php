@@ -50,6 +50,34 @@ function get_post_attachments( $args=array() ) {
 }
 
 /**
+ * Get post images as a carousel
+ */
+function get_carousel() {
+	// Initialize carousel
+	echo '<div id="carousel" class="owl-carousel owl-theme">';
+	// Get post attachments
+	$images = get_post_attachments();
+	// Set thumbnail size
+	$thumbnail_size = 'large';
+	// Checks if there are no post attachments
+	if ( !empty($images) ):
+		// Iterate through the post attachments
+		foreach ( $images as $image ):
+			// Get the attachment image size
+			$imagesize = wp_get_attachment_image_src( $image->ID, $thumbnail_size );
+			// Create an entry for the carousel
+			echo '<div class="item">';
+			echo '<img src="' . $imagesize[0] . '" alt="' . $image->post_title . '" />';
+			if ( $image->post_excerpt ):
+				echo '<div class="img-caption">' . $image->post_excerpt . '</div>';
+			endif;
+			echo '</div>';
+		endforeach;
+	endif;
+	echo '</div><br/>';
+}
+
+/**
  * Prints section label
  */
 function get_label( $label ) {
