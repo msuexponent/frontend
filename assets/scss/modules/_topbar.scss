@@ -72,8 +72,10 @@
     display: none;
   }
 
-  .title a {
-    font-size: 1rem;
-    color: $primary-color;
+  .title-bar-title {
+    a {
+      font-size: 1.25rem;
+      color: $primary-color;
+    }
   }
 }
