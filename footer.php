@@ -13,14 +13,12 @@
 
 </section>
 
-<!-- Owl Carousel-->
-<script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/components/owlcarousel/owl-carousel/owl.carousel.js"></script>
-
 <div id="footer-nav">
 	<div class="row">
 		<div class="bar show-for-medium">
 			<a href="#top"><i class="fa fa-chevron-circle-up"></i>&nbsp;&nbsp;&nbsp;back to top</a>
 		</div>
+	</div>
 </div>
 
 <nav id="site-navigation" class="main-navigation top-bar" role="navigation">
