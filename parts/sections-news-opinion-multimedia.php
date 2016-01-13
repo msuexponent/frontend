@@ -23,7 +23,7 @@
 		<!-- Single sentence excerpt -->
 		<?php get_news_excerpt(); ?>
 		<!-- Two posts without thumbnails -->
-		<div class="show-for-medium-up">
+		<div class="show-for-medium">
 			<?php get_news_list_nothumbs(); ?>
 		</div>
 	</div>

@@ -46,7 +46,7 @@
 		</div>
 
 		<div id="logo">
-			<div class="row show-for-medium-up">
+			<div class="row show-for-medium">
 				<div class="medium-8 columns">
 					<a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri();?>/assets/images/site/exponent-logo.png"></a>
 				</div>
