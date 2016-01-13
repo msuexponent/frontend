@@ -25,8 +25,8 @@
 
 <nav id="site-navigation" class="main-navigation top-bar" role="navigation">
 	<div id="footer-nav">
-		<div id="footer-nav-bar" class="row">
-			<div class="top-bar-left show-for-medium">
+		<div id="footer-nav-bar" class="row show-for-medium">
+			<div class="top-bar-left">
 				<ul class="menu">
 					<?php foundationpress_top_bar_l(); ?>
 				</ul>
