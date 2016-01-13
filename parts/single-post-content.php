@@ -1,5 +1,8 @@
 <div class="small-12 large-8 large-centered columns">
 
+	<!-- Get post attachments as a carousel -->
+	<?php get_carousel(); ?>
+
 	<!-- Get post content using post formats -->
 	<?php the_content(); ?>
 

@@ -95,16 +95,14 @@ if ( $the_query->have_posts() ) {
 		// List element
 		echo '<div class="column"><h6>';
 		// Subcategory
-		echo '<span class="subcategory-name">';
 		$category = get_the_category();
 		foreach( ( get_the_category() ) as $childcat ) {
 			if ( cat_is_ancestor_of( 5, $childcat ) ) {
-				echo '<a href="' . get_category_link( $childcat->cat_ID ) . '">';
+				echo '<a class="subcategory" href="' . get_category_link( $childcat->cat_ID ) . '">';
 				echo $childcat->cat_name . '</a>';
 				echo ' · ';
 			}
 		}
-		echo '</span>';
 		// Link
 		echo '<a href="' . get_permalink( get_post()->ID ) . '" title="' . esc_attr( get_post()->post_title ) . '">';
 		// Title
