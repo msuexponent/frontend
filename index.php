@@ -17,7 +17,7 @@
 get_header(); ?>
 
 <div id="page" role="main">
-	<div class="small-12 large-12 columns" role="main">
+	<div class="small-12 large-12 columns">
 		<?php get_template_part('parts/layouts', 'mobile'); ?>
 		<?php get_template_part('parts/layouts', 'desktop-tablet'); ?>
 	</div>
