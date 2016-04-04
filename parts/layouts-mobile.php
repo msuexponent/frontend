@@ -3,6 +3,7 @@
 <div class="show-for-small-only">
 	<!-- Content -->
 	<div class="row">
+		<?php get_template_part( 'parts/header', 'icon-box' ); ?>
 		<div class="small-12 columns">
 			<?php get_template_part('parts/mobile', 'featured'); ?>
 			<?php get_template_part('parts/mobile', 'news'); ?>
