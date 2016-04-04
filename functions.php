@@ -63,15 +63,4 @@ require_once( 'library/sections/sports.php' );
 /** If your site requires protocol relative url's for theme assets, uncomment the line below */
 // require_once( 'library/protocol-relative-theme-assets.php' );
 
-
-// custom admin login logo
-function custom_login_logo() {
-	echo '<style type="text/css">
-	h1 a { background-image: url('.get_bloginfo('template_directory').'/assets/images/site/e-to-the-x.png) !important; }
-	</style>';
-}
-add_action('login_head', 'custom_login_logo');
-
-
-
 ?>
