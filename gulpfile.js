@@ -1,3 +1,4 @@
+require('es6-promise').polyfill();
 /*jslint node: true */
 "use strict";
 
