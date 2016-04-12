@@ -38,6 +38,7 @@
 			<div class="title-bar-title">
 				<button class="menu-icon" type="button" data-toggle="offCanvas"></button>
 				<center><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo get_template_directory_uri();?>/assets/images/site/exponent-logo.png" width="60%"></a></center>
+				<?php get_template_part( 'parts/header', 'icon-box' ); ?>
 			</div>
 		</div>
 
@@ -51,6 +52,7 @@
 				</div>
 			</div>
 		</div>
+
 
 		<nav id="site-navigation" class="main-navigation top-bar" role="navigation">
 			<div id="header-nav">
