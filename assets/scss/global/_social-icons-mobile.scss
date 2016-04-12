@@ -1,0 +1,14 @@
+@include breakpoint(small) {
+	.icon-box {
+		margin: 10px 0 0 0;
+		text-align: center;
+	}
+
+	.icon-box a {
+		color: $medium-gray !important;
+	}
+
+	.icon-box a:hover {
+		color: $primary-color !important;
+	}
+}
