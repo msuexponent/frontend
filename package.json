@@ -59,5 +59,8 @@
     "postinstall": "bower install && gulp build",
     "production": "gulp --production",
     "watch": "gulp"
+  },
+  "dependencies": {
+    "es6-promise": "^3.1.2"
   }
 }
