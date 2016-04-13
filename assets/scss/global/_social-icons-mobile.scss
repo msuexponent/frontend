@@ -5,8 +5,11 @@
 	}
 
 	.icon-box a {
-		width: 70% !important;
 		color: $medium-gray !important;
+	}
+
+	.icon-box a span {
+		width: 70% !important;
 	}
 
 	.icon-box a:hover {
