@@ -1,18 +1,38 @@
-@include breakpoint(small) {
-	.icon-box {
+.icon-box {
+	@include breakpoint(small only) {
 		margin: 0 0 20px 0;
 		text-align: center;
 	}
+}
 
-	.icon-box a {
+.icon-box .fa-stack-2x {
+	@include breakpoint(small only) {
+		top: 6px;
+		font-size: 1.5em;
+	}
+}
+
+.icon-box .fa-stack-1x {
+	@include breakpoint(small only) {
+		font-size: .7em;
+	}
+}
+
+.icon-box a {
+	@include breakpoint(small only) {
 		color: $medium-gray !important;
+		padding-right: 0rem !important;
 	}
+}
 
-	.icon-box a span {
-		width: 70% !important;
+.icon-box span {
+	@include breakpoint(small only) {
+		width: 35px;
 	}
+}
 
-	.icon-box a:hover {
+.icon-box a:hover {
+	@include breakpoint(small only) {
 		color: $primary-color !important;
 	}
 }
