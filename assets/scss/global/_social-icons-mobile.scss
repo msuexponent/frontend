@@ -7,7 +7,7 @@
 
 .icon-box .fa-stack-2x {
 	@include breakpoint(small only) {
-		top: 6px;
+		top: 8px;
 		font-size: 1.5em;
 	}
 }
