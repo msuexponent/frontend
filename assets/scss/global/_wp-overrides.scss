@@ -16,6 +16,7 @@ p.wp-caption-text{
 	display: none;
 }
 
-.top-bar-right .is-dropdown-submenu {
-	text-align: right;
+.top-bar-right .dropdown.menu.submenu.first-sub {
+	right: 0;
+	left: auto;
 }
