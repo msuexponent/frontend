@@ -108,4 +108,7 @@ function db_filter_user_query( &$user_query ) {
 	return $user_query;
 }
 
+
+add_image_size('custom-size', 150, 150, array('left', 'bottom'));
+
 ?>
