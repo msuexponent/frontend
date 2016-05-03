@@ -4,22 +4,14 @@
 
 #logo {
 	background-color: $white;
-
+	text-align: center;
+	
 	img {
-		width: 40%;
 		padding-top: 0.3rem;
-	}
+		width: 60%;
 
-	.icon-box {
-		margin-top: 2rem;
-		margin-right: 2.25rem;
-		float: right;
-		a {
-			color: $medium-gray;
-			padding-right: 0.25rem;
-		}
-		a:hover {
-			color: $primary-color;
+		@include breakpoint(medium) {
+			width: 40%;
 		}
 	}
 }

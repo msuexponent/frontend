@@ -37,17 +37,15 @@
 		<div class="title-bar" data-responsive-toggle="site-navigation">
 			<div class="title-bar-title">
 				<button class="menu-icon" type="button" data-toggle="offCanvas"></button>
-				<center><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo get_template_directory_uri();?>/assets/images/site/exponent-logo.png" width="60%"></a></center>
-				<?php get_template_part( 'parts/header', 'icon-box' ); ?>
 			</div>
 		</div>
 
 		<div id="logo">
-			<div class="row show-for-medium">
-				<div class="medium-8 columns">
+			<div class="row">
+				<div class="small-12 medium-8 columns">
 					<a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri();?>/assets/images/site/exponent-logo.png"></a>
 				</div>
-				<div class="medium-4 columns">
+				<div class="small-12 medium-4 columns">
 					<?php get_template_part( 'parts/header', 'icon-box' ); ?>
 				</div>
 			</div>
