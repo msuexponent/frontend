@@ -1,0 +1,22 @@
+.icon-box {
+	margin: 0 auto 1.25rem;
+	
+	@include breakpoint (medium) {
+		margin-top: 2rem;
+		margin-right: 2.25rem;
+		float: right;
+	}
+
+	a {
+		color: $medium-gray;
+		padding-right: 0;
+
+		@include breakpoint (medium) {
+			padding-right: 0.25rem;
+		}
+	}
+
+	a:hover {
+		color: $primary-color;
+	}
+}
