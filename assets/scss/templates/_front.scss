@@ -5,13 +5,19 @@
 #logo {
 	background-color: $white;
 	text-align: center;
+	width: 100%;
 	
+	@include breakpoint(medium) {
+		text-align: left;
+	}
+
 	img {
 		padding-top: 0.3rem;
 		width: 60%;
 
 		@include breakpoint(medium) {
-			width: 40%;
+			width: 100%;
+			max-width: 25rem;
 		}
 	}
 }
