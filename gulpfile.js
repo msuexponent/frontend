@@ -1,3 +1,4 @@
+require('es6-promise').polyfill();
 /*jslint node: true */
 "use strict";
 
@@ -9,11 +10,10 @@ var merge       = require('merge-stream');
 var sequence    = require('run-sequence');
 var colors      = require('colors');
 var dateFormat  = require('dateformat');
-var del         = require('del');
 
 // Enter URL of your local server here
 // Example: 'http://localwebsite.dev'
-var URL = '';
+var URL = 'http://localhost/msuexponent';
 
 // Check for --production flag
 var isProduction = !!(argv.production);
@@ -26,7 +26,7 @@ var PATHS = {
   sass: [
     'assets/components/foundation-sites/scss',
     'assets/components/motion-ui/src',
-    'assets/components/fontawesome/scss',
+    'assets/components/fontawesome/scss'
   ],
   javascript: [
     'assets/components/what-input/what-input.js',
@@ -57,13 +57,11 @@ var PATHS = {
     // Motion UI
     'assets/components/motion-ui/motion-ui.js',
 
+    // Slick Carousel
+    'assets/components/slick-carousel/slick/slick.min.js',
+
     // Include your own custom scripts (located in the custom folder)
-    'assets/javascript/custom/*.js',
-  ],
-  phpcs: [
-    '**/*.php',
-    '!wpcs',
-    '!wpcs/**',
+    'assets/javascript/custom/*.js'
   ],
   pkg: [
     '**/*',
@@ -71,12 +69,12 @@ var PATHS = {
     '!**/components/**',
     '!**/scss/**',
     '!**/bower.json',
-    '!**/gulpfile.js',
+    '!**/Gruntfile.js',
     '!**/package.json',
     '!**/composer.json',
     '!**/composer.lock',
     '!**/codesniffer.ruleset.xml',
-    '!**/packaged/*',
+    '!**/packaged/*'
   ]
 };
 
@@ -85,7 +83,7 @@ gulp.task('browser-sync', ['build'], function() {
 
   var files = [
             '**/*.php',
-            'assets/images/**/*.{png,jpg,gif}',
+            'assets/images/**/*.{png,jpg,gif}'
           ];
 
   browserSync.init(files, {
@@ -100,7 +98,7 @@ gulp.task('browser-sync', ['build'], function() {
 // Compile Sass into CSS
 // In production, the CSS is compressed
 gulp.task('sass', function() {
-  // Minify CSS if run with --production flag
+  // Minify CSS if run wtih --production flag
   var minifycss = $.if(isProduction, $.minifyCss());
 
   return gulp.src('assets/scss/foundation.scss')
@@ -150,10 +148,7 @@ gulp.task('javascript', function() {
 
   return gulp.src(PATHS.javascript)
     .pipe($.sourcemaps.init())
-    .pipe($.babel())
-    .pipe($.concat('foundation.js', {
-      newLine:'\n;'
-    }))
+    .pipe($.concat('foundation.js'))
     .pipe($.if(isProduction, uglify))
     .pipe($.if(!isProduction, $.sourcemaps.write()))
     .pipe(gulp.dest('assets/javascript'))
@@ -193,7 +188,7 @@ gulp.task('package', ['build'], function() {
 
 // Build task
 // Runs copy then runs sass & javascript in parallel
-gulp.task('build', ['clean'], function(done) {
+gulp.task('build', function(done) {
   sequence('copy',
           ['sass', 'javascript', 'lint'],
           done);
@@ -201,7 +196,7 @@ gulp.task('build', ['clean'], function(done) {
 
 // PHP Code Sniffer task
 gulp.task('phpcs', function() {
-  return gulp.src(PATHS.phpcs)
+  return gulp.src(['*.php'])
     .pipe($.phpcs({
       bin: 'wpcs/vendor/bin/phpcs',
       standard: './codesniffer.ruleset.xml',
@@ -212,7 +207,7 @@ gulp.task('phpcs', function() {
 
 // PHP Code Beautifier task
 gulp.task('phpcbf', function () {
-  return gulp.src(PATHS.phpcs)
+  return gulp.src(['*.php'])
   .pipe($.phpcbf({
     bin: 'wpcs/vendor/bin/phpcbf',
     standard: './codesniffer.ruleset.xml',
@@ -220,27 +215,6 @@ gulp.task('phpcbf', function () {
   }))
   .on('error', $.util.log)
   .pipe(gulp.dest('.'));
-});
-
-// Clean task
-gulp.task('clean', function(done) {
-  sequence(['clean:javascript', 'clean:css'],
-            done);
-});
-
-// Clean JS
-gulp.task('clean:javascript', function() {
-  return del([
-      'assets/javascript/foundation.js'
-    ]);
-});
-
-// Clean CSS
-gulp.task('clean:css', function() {
-  return del([
-      'assets/stylesheets/foundation.css',
-      'assets/stylesheets/foundation.css.map'
-    ]);
 });
 
 // Default gulp task
@@ -253,13 +227,13 @@ gulp.task('default', ['build', 'browser-sync'], function() {
   }
 
   // Sass Watch
-  gulp.watch(['assets/scss/**/*.scss'], ['clean:css', 'sass'])
+  gulp.watch(['assets/scss/**/*.scss'], ['sass'])
     .on('change', function(event) {
       logFileChange(event);
     });
 
   // JS Watch
-  gulp.watch(['assets/javascript/custom/**/*.js'], ['clean:javascript', 'javascript', 'lint'])
+  gulp.watch(['assets/javascript/custom/**/*.js'], ['javascript', 'lint'])
     .on('change', function(event) {
       logFileChange(event);
     });
