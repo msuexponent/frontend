@@ -1,10 +1,28 @@
 .icon-box {
-	margin: 0 auto 1.25rem;
-	
+	margin: 0 auto;
+
+	.fa-stack-2x {
+		@include breakpoint(small only) {
+			top: 1px;
+			font-size: 1.8em;
+		}
+	}
+
+	.fa-stack-1x {
+		@include breakpoint(small only) {
+			font-size: .8em;
+		}
+	}
+
 	@include breakpoint (medium) {
 		margin-top: 2rem;
 		margin-right: 2.25rem;
 		float: right;
+	}
+
+	@include breakpoint (small only) {
+		text-align: center;
+		padding: 0 0 20px 0;
 	}
 
 	a {
@@ -18,5 +36,12 @@
 
 	a:hover {
 		color: $primary-color;
+	}
+
+}
+
+.mobile_icon {
+	@include breakpoint (small only) {
+		background-color: white;
 	}
 }

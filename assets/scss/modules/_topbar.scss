@@ -17,7 +17,7 @@
 
   .menu a {
     height: 45px;
-    line-height: 45px;
+    line-height: 1;
     color: $white;
     padding-top: 0;
     padding-bottom: 0;
@@ -73,9 +73,24 @@
   }
 
   .title-bar-title {
+
     a {
       font-size: 1.25rem;
       color: $primary-color;
+
+      img {
+
+        @include breakpoint(small only) {
+          display: block;
+          width: 60%;
+          margin: 0 auto;
+
+        }
+
+      }
+
     }
+
   }
+  
 }
