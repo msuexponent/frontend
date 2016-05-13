@@ -40,21 +40,16 @@
 				<a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri();?>/assets/images/site/exponent-logo.png"></a>
 			</div>
 		</div>
-		<div class="show-for-small-only mobile_icon">
-			<?php get_template_part( 'parts/header', 'icon-box' ); ?>
-		</div>
+
+		<?php get_template_part( 'parts/header', 'icon-box' ); ?>
 
 		<div id="logo">
 			<div class="row show-for-medium">
 				<div class="medium-8 columns">
 					<a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri();?>/assets/images/site/exponent-logo.png"></a>
 				</div>
-				<div class="medium-4 columns">
-					<?php get_template_part( 'parts/header', 'icon-box' ); ?>
-				</div>
 			</div>
 		</div>
-
 
 		<nav id="site-navigation" class="main-navigation top-bar" role="navigation">
 			<div id="header-nav">
