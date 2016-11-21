@@ -13,7 +13,7 @@ var del         = require('del');
 
 // Enter URL of your local server here
 // Example: 'http://localwebsite.dev'
-var URL = 'https://localhost';
+var URL = 'http://localhost/exponent_code/live_site_structure';
 
 // Check for --production flag
 var isProduction = !!(argv.production);
